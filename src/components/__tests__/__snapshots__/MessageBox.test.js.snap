@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders multiple messages 1`] = `
+<div>
+  Count 
+  2
+  <div
+    className="MuiPaper-root makeStyles-paper-3 MuiPaper-elevation1 MuiPaper-rounded"
+    style={
+      Object {
+        "backgroundColor": undefined,
+      }
+    }
+  >
+    <div>
+      hi there
+    </div>
+    <div
+      className="makeStyles-buttonContainer-2"
+    >
+      <button
+        className="makeStyles-button-1"
+        onClick={[Function]}
+      >
+        Clear
+      </button>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root makeStyles-paper-3 MuiPaper-elevation1 MuiPaper-rounded"
+    style={
+      Object {
+        "backgroundColor": undefined,
+      }
+    }
+  >
+    <div>
+      hi new message
+    </div>
+    <div
+      className="makeStyles-buttonContainer-2"
+    >
+      <button
+        className="makeStyles-button-1"
+        onClick={[Function]}
+      >
+        Clear
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders one message 1`] = `
+<div>
+  Count 
+  1
+  <div
+    className="MuiPaper-root makeStyles-paper-3 MuiPaper-elevation1 MuiPaper-rounded"
+    style={
+      Object {
+        "backgroundColor": undefined,
+      }
+    }
+  >
+    <div>
+      hi there
+    </div>
+    <div
+      className="makeStyles-buttonContainer-2"
+    >
+      <button
+        className="makeStyles-button-1"
+        onClick={[Function]}
+      >
+        Clear
+      </button>
+    </div>
+  </div>
+</div>
+`;
