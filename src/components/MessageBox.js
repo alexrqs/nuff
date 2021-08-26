@@ -32,8 +32,8 @@ const MessagesBox = ({ messages, onClear, priority }) => {
   return (
     <div>
       Count {messages.length}
-      {messages.map(({ message }) =>
-        <Paper key={message} style={{  backgroundColor: bgColor[priority],  }} className={css.paper}>
+      {messages.map(({ message }, idx) =>
+        <Paper key={idx} style={{  backgroundColor: bgColor[priority],  }} className={css.paper}>
           <div>{message}</div>
           <div className={css.buttonContainer}>
             <button className={css.button} onClick={() => onClear({message})}>Clear</button>
@@ -44,4 +44,4 @@ const MessagesBox = ({ messages, onClear, priority }) => {
   )
 }
 
-export default MessagesBox
+export default React.memo(MessagesBox)

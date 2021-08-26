@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button'
 
 import MessagesBox from './MessageBox';
 import { PRIORITY } from '../utils/enums'
-import { APIContext } from '../App';
+import { APIContext } from '../AppProvider';
 
 const MessageList = () => {
   const { messages, onDelete, isApiStarted, toggleApi, clearMessages } = useContext(APIContext)
@@ -19,32 +19,27 @@ const MessageList = () => {
   const infoMessages = messages.filter(m => m.priority === PRIORITY.INFO).reverse()
   const newError = "message of error"
 
+  const RenderButton = React.memo(() => (
+    <Button
+        variant="contained"
+        onClick={toggleApi}
+      >
+      {isApiStarted ? 'Stop Messages' : 'Start Messages'}
+    </Button>
+  ))
 
-  const RenderButton = () => {
-    return (
-      <Button
-          variant="contained"
-          onClick={toggleApi}
-        >
-        {isApiStarted ? 'Stop Messages' : 'Start Messages'}
-      </Button>
-    )
-  }
-
-  const renderClearButton = () => {
-    return (
-      <Button variant="contained" onClick={clearMessages} >
-        Clear Messages
-      </Button>
-    )
-  }
+  const RenderClearButton = React.memo(() => (
+    <Button variant="contained" onClick={clearMessages} >
+      Clear Messages
+    </Button>
+  ))
 
   return (
     <div>
       <Grid container justifyContent="center" spacing={2}>
         <Grid item xs={3}></Grid>
         <Grid item xs={3}><RenderButton /></Grid>
-        <Grid item xs={3}>{renderClearButton()}</Grid>
+        <Grid item xs={3}><RenderClearButton /></Grid>
         <Grid item xs={3}></Grid>
       </Grid>
 
@@ -68,4 +63,4 @@ const MessageList = () => {
   )
 }
 
-export default MessageList
+export default React.memo(MessageList)

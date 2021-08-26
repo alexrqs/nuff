@@ -17,8 +17,8 @@ it('renders one message', () => {
 
 it('renders multiple messages', () => {
   const messages = [
-    { message: 'hi there', priority: 1},
-    { message: 'hi new message', priority: 1}
+    { message: 'hi there', priority: 1 },
+    { message: 'hi new message', priority: 1 }
   ]
 
   const component = renderer.create(

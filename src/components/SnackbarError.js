@@ -1,15 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
-import { APIContext } from '../App'
-import { useEffect } from 'react';
+import { APIContext } from '../AppProvider'
 
 function Alert(props) {
   return <MuiAlert elevation={5} variant="filled" {...props} />;
 }
 
-export const SnackbarError = () => {
+export const SnackbarError = React.memo(() => {
   const { newError } = useContext(APIContext)
   const [open, setOpen] = React.useState(!!newError);
 
@@ -34,4 +33,4 @@ export const SnackbarError = () => {
       </Alert>
     </Snackbar>
   )
-}
+})

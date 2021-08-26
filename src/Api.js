@@ -5,7 +5,6 @@ export default class MessageGenerator {
   constructor(options) {
     this.messageCallback = options.messageCallback
     this.stopGeneration = false
-    console.log('constructor----------');
   }
 
   stop() {
